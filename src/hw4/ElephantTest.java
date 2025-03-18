@@ -1,6 +1,6 @@
 package hw4;
 
-public class TestElephant {
+public class ElephantTest {
 	public static void main(String[] args) {
 //		動物一
 		Animal a1 = new Animal(3, 8.0f);
