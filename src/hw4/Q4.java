@@ -1,15 +1,46 @@
 package hw4;
-//有個一維陣列如下:
-//{29, 100, 39, 41, 50, 8, 66, 77, 95, 15}
-//請寫出一隻程式能輸出此陣列所有元素的平均值與大於平均值的元素
-//(提示:陣列,length屬性)
-//• 請建立一個字串,經過程式執行後,輸入結果是反過來的
-//例如String s = “Hello World”,執行結果即為dlroW olleH
-//(提示:String方法,陣列)
-//• 有個字串陣列如下 (八大行星):
-//{“mercury”, “venus”, “earth”, “mars”, “jupiter”, “saturn”, “uranus”, “neptune”}
-//請用程式計算出這陣列裡面共有多少個母音(a, e, i, o, u)
-//(提示:字元比對,String方法)
-public class Q4 {
 
+public class Q4 {
+//	班上有8位同學,他們進行了6次考試結果如下:請算出每位同學考最高分的次數
+//	(提示:二維陣列)
+	
+	//建立個人每次考試的成績陣列
+	public static void main(String[] args) {
+		int [][]student = {
+		{ 10, 37, 100, 77, 98, 90 },
+		{ 35, 75, 70, 95, 70, 80 }, 
+		{ 40, 77, 79, 70, 89, 100 }, 
+		{ 100, 89, 90, 89, 90, 75 },
+		{ 90, 64, 75, 60, 75, 50 },
+		{ 85, 75, 70, 75, 90, 20 },
+		{ 75, 70, 79, 85, 89, 99 },
+		{ 70, 95, 90, 89, 90, 75 }
+		};
+	
+	//建立個人得到最高分次數的陣列
+		int[] count = new int[student.length]; 
+		
+		for(int j = 0; j < student[0].length; j++) {	 
+	//比較每一輪考試中的最高分max分別是多少	
+			int max = student[0][j]; 
+			for(int i = 0; i < student.length; i++) { 
+				if(student[i][j] > max) {             
+				max = student[i][j];     //誰分數比較高，就變成max
+				}
+			}
+	//每一輪比完，比對得到最高分的是誰，幫他的count++
+			for (int i = 0; i < student.length; i++) { 
+	            if (student[i][j] == max) {
+	                count[i]++;
+	            }
+	        }
+		}
+		
+	// 印出每位同學獲得最高分的次數
+        for (int i = 0; i < count.length; i++) {
+            System.out.println("學生 " + (i + 1) + " 考最高分次數: " + count[i]);
+        }
+		
+		
+	}	
 }
