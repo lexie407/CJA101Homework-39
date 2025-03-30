@@ -16,7 +16,8 @@ public class Animal {
 		//  2.無參數建構子也是Java Bean的規範之一
 		//	3.留著給日後搭配的框架使用(框架工具利用此建構子幫我們產生實體)
 	}
-	
+
+//有參數建構子，設定屬性
 	public Animal(int age, float weight) {
 		this.age = age; //區分出事實體變數的存取
 		this.weight = weight;
