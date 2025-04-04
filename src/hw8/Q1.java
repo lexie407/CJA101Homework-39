@@ -43,6 +43,7 @@ public class Q1 {
 		//for-each
 		System.out.println("----foreach----");
 		
+		
 	}
 
 }
