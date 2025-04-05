@@ -15,7 +15,7 @@ import java.util.List;
 public class Q1 {
 	
 	public static void main(String[] args) {
-		List list = new ArrayList();
+		List<Object> list = new ArrayList();
 		list.add(100);
 		list.add(3.14);
 		list.add(21L);
@@ -30,18 +30,40 @@ public class Q1 {
 		
 		//Iterator
 		System.out.println("----Iterator----");
-		Iterator objs = list.iterator();
-		while(objs.hasNext())
-			System.out.println(objs.next());
+		Iterator<Object> iterator1 = list.iterator();
+		while(iterator1.hasNext())
+			System.out.println(iterator1.next() + ",");
 		
 		//for迴圈
 		System.out.println("----for迴圈----");
-		for(int i = 1; i < list.size(); i++)
-		System.out.println(list.get(i));
+		for(int i = 0; i < list.size(); i++)
+		System.out.println(list.get(i) + ",");
 		
 		
 		//for-each
 		System.out.println("----foreach----");
+		for(Object obj : list)
+			System.out.println(obj + ",");
+		
+		
+		//移除不是java.lang.Number相關的物件
+		System.out.println("----移除不是java.lang.Number的物件----");
+		Iterator <Object> iterator2 = list.iterator(); 
+		while(iterator2.hasNext()) {
+			if(iterator2.next() instanceof Number == false) {
+				iterator2.remove();
+			}
+		}
+		
+		//再次印出這個集合物件的所有元素
+		for(Object obj2 : list) {
+			System.out.println(obj2 + ",");
+		}
+		
+		
+		
+		
+		
 		
 		
 	}
