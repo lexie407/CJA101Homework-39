@@ -16,7 +16,6 @@ public class Q1 {
 		sc.close();
 	
 	}
-// arr[5][4] =for內印五次
 	
 	private static void starSquare(int width, int height) {
 		for(int i = 0; i < height ; i++) {
